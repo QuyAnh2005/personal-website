@@ -10,7 +10,8 @@ export async function generateStaticParams() {
   return posts;
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+// Fix type for NextJS 15 compatibility
+export async function generateMetadata({ params }: any) {
   // Access the id directly from params
   const id = params.id;
   const post = await getContentData('blog', id);
@@ -20,7 +21,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default async function BlogPost({ params }: { params: { id: string } }) {
+// Fix type for NextJS 15 compatibility
+export default async function BlogPost({ params }: any) {
   // Access the id directly from params
   const id = params.id;
   const post = await getContentData('blog', id);
