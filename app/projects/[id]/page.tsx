@@ -11,8 +11,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  // Await the params object before using its properties
-  const id = (await params).id;
+  // Access the id directly from params
+  const id = params.id;
   const project = await getContentData('projects', id);
   return {
     title: `${project.title} | Alex Chen Projects`,
@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 
 export default async function ProjectDetail({ params }: { params: { id: string } }) {
-  // Await the params object before using its properties
-  const id = (await params).id;
+  // Access the id directly from params
+  const id = params.id;
   const project = await getContentData('projects', id);
   const formattedDate = format(new Date(project.date), 'MMMM d, yyyy');
 

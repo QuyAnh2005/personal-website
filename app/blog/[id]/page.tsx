@@ -11,8 +11,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  // Await the params object before using its properties
-  const id = (await params).id;
+  // Access the id directly from params
+  const id = params.id;
   const post = await getContentData('blog', id);
   return {
     title: `${post.title} | Alex Chen Blog`,
@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 
 export default async function BlogPost({ params }: { params: { id: string } }) {
-  // Await the params object before using its properties
-  const id = (await params).id;
+  // Access the id directly from params
+  const id = params.id;
   const post = await getContentData('blog', id);
   const formattedDate = format(new Date(post.date), 'MMMM d, yyyy');
 
