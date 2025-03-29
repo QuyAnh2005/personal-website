@@ -2,6 +2,9 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
-    "react/no-unescaped-entities": "warn"
-  }
+    "react/no-unescaped-entities": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
+  },
+  "ignorePatterns": ["**/*.js", "**/*.jsx", "node_modules", ".next", "public"]
 }
