@@ -14,7 +14,7 @@ export default async function ProjectsPage() {
       <div className="mb-10">
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Projects</h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          A collection of machine learning and AI research projects I've developed, focusing on computer vision, 
+          A collection of machine learning and AI research projects I&apos;ve developed, focusing on computer vision, 
           reinforcement learning, and natural language processing.
         </p>
       </div>

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+// Link is not used in this file
 import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export function Footer() {

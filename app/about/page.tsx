@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { getSortedContentData, PostMetadata } from '@/lib/mdx';
@@ -104,7 +104,7 @@ export default async function AboutPage() {
         <div className="md:flex-1">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">About Me</h1>
           <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-3xl">
-            I'm Quy-Anh Dang, a Machine Learning Researcher and Data Scientist with a strong background in mathematics and computer science.
+            I&apos;m Quy-Anh Dang, a Machine Learning Researcher and Data Scientist with a strong background in mathematics and computer science.
             I specialize in developing AI solutions, particularly in LLM safety, trustworthy AI systems, and production-ready
             machine learning applications.
           </p>

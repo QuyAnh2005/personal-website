@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ContentCard } from './content-card';
 import { TagFilter } from '../ui/tag-filter';
 import { Search } from '../ui/search';

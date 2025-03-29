@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+// useState is not used in this component
 
 interface TagFilterProps {
   tags: string[];
