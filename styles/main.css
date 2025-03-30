@@ -1,0 +1,21 @@
+/* Main CSS File - Import all other stylesheets */
+
+/* Support for math equations - must come first */
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css');
+
+/* Base Styles */
+@import './base/variables.css';
+@import './base/typography.css';
+
+/* Theme Styles */
+@import './themes/light-mode.css';
+@import './themes/dark-mode.css';
+
+/* Components */
+@import './components/markdown.css';
+
+/* Pages */
+@import './pages/about-page.css';
+
+/* Utils */
+@import './utils/theme-consistency.css';

@@ -10,11 +10,11 @@ export async function generateStaticParams() {
   return publications;
 }
 
-// Instead of fighting with TypeScript, let's suppress type checking for these functions
-// @ts-ignore - Next.js params handling is complex between dev and prod
-export async function generateMetadata({ params }: any) {
-  // Handle both Promise and non-Promise params
-  const id = params && params.id ? params.id : (await params).id;
+// Properly handle params in Next.js
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  // Always await params even if it's not a Promise to handle both dev and prod environments
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const id = resolvedParams.id;
   const publication = await getContentData('research', id);
   return {
     title: `${publication.title} | Alex Chen Research`,
@@ -22,10 +22,10 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-// @ts-ignore - Next.js params handling is complex between dev and prod
-export default async function ResearchDetail({ params }: any) {
-  // Handle both Promise and non-Promise params
-  const id = params && params.id ? params.id : (await params).id;
+export default async function ResearchDetail({ params }: { params: { id: string } }) {
+  // Always await params even if it's not a Promise to handle both dev and prod environments
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const id = resolvedParams.id;
   const publication = await getContentData('research', id);
   const formattedDate = format(new Date(publication.date), 'MMMM d, yyyy');
 
@@ -102,7 +102,9 @@ export default async function ResearchDetail({ params }: any) {
             </p>
           </header>
           
-          <MarkdownContent content={publication.contentHtml} />
+          <div className="bg-transparent dark:bg-transparent">
+            <MarkdownContent content={publication.contentHtml} />
+          </div>
         </article>
       </div>
     </div>

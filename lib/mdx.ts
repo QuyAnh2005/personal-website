@@ -75,29 +75,43 @@ export async function getSortedContentData(type: ContentType) {
 }
 
 export async function getContentData(type: ContentType, id: string) {
-  const contentDirectory = await getContentDirectory(type);
-  const fullPath = path.join(contentDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  try {
+    const contentDirectory = await getContentDirectory(type);
+    // Decode URI component to handle any URL-encoded characters (like spaces)
+    const decodedId = decodeURIComponent(id);
+    const fullPath = path.join(contentDirectory, `${decodedId}.md`);
+    
+    // Check if file exists
+    if (!fs.existsSync(fullPath)) {
+      console.error(`File not found: ${fullPath}`);
+      throw new Error(`Content not found: ${decodedId}`);
+    }
+    
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
   
-  const matterResult = matter(fileContents);
+    const matterResult = matter(fileContents);
   
-  // Process markdown content using remark and rehype pipeline
-  // This is a more robust approach than the previous implementation
-  const processedContent = await remark()
-    .use(remarkMath) // Support math expressions
-    .use(remarkRehype, { allowDangerousHtml: true }) // Convert to rehype with HTML passthrough
-    .use(rehypeRaw) // Handle raw HTML in markdown
-    .use(rehypeKatex) // Process math blocks with KaTeX
-    .use(rehypeStringify) // Convert to HTML string
-    .process(matterResult.content);
-  
-  const contentHtml = processedContent.toString();
-  
-  return {
-    id,
-    contentHtml,
-    ...(matterResult.data as Omit<PostMetadata, 'id'>),
-  };
+    // Process markdown content using remark and rehype pipeline
+    // This is a more robust approach than the previous implementation
+    const processedContent = await remark()
+      .use(remarkMath) // Support math expressions
+      .use(remarkRehype, { allowDangerousHtml: true }) // Convert to rehype with HTML passthrough
+      .use(rehypeRaw) // Handle raw HTML in markdown
+      .use(rehypeKatex) // Process math blocks with KaTeX
+      .use(rehypeStringify) // Convert to HTML string
+      .process(matterResult.content);
+    
+    const contentHtml = processedContent.toString();
+    
+    return {
+      id,
+      contentHtml,
+      ...(matterResult.data as Omit<PostMetadata, 'id'>),
+    };
+  } catch (error) {
+    console.error(`Error processing content for ${id}:`, error);
+    throw error;
+  }
 }
 
 export async function filterContentByTag(content: PostMetadata[], tag: string | null) {

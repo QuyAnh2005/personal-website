@@ -28,7 +28,7 @@ export function Search({ onSearch, placeholder = "Search by title or description
         />
         <button
           type="submit"
-          className="p-2 bg-blue-600 text-white hover:bg-blue-700 focus:outline-none"
+          className="h-full p-2 bg-blue-600 text-white hover:bg-blue-700 focus:outline-none flex items-center justify-center"
           aria-label="Search"
         >
           <FaSearch />

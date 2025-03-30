@@ -8,6 +8,20 @@ export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
+  // Apply theme class to document element
+  useEffect(() => {
+    if (mounted) {
+      const html = document.documentElement;
+      if (theme === 'dark') {
+        html.classList.add('dark');
+        html.classList.remove('light');
+      } else {
+        html.classList.add('light');
+        html.classList.remove('dark');
+      }
+    }
+  }, [theme, mounted]);
+
   // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true);

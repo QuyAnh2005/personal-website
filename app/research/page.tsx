@@ -2,8 +2,8 @@ import { getSortedContentData } from '@/lib/mdx';
 import { ContentList } from '@/components/content/content-list';
 
 export const metadata = {
-  title: 'Research | Alex Chen',
-  description: 'Academic publications and research work by Alex Chen in machine learning and AI.'
+  title: 'Research | Quy-Anh Dang',
+  description: 'Academic publications and research work by Quy-Anh Dang in machine learning and AI.'
 };
 
 export default async function ResearchPage() {

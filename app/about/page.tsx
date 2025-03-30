@@ -102,8 +102,8 @@ export default async function AboutPage() {
       {/* Profile Section */}
       <div className="md:flex md:items-center md:justify-between mb-16">
         <div className="md:flex-1">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">About Me</h1>
-          <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-3xl">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
             I&apos;m Quy-Anh Dang, a Machine Learning Researcher and Data Scientist with a strong background in mathematics and computer science.
             I specialize in developing AI solutions, particularly in LLM safety, trustworthy AI systems, and production-ready
             machine learning applications.
@@ -113,11 +113,11 @@ export default async function AboutPage() {
 
       {/* Education Section */}
       <section className="mb-20">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8">Education</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Education</h2>
         <div className="space-y-6">
           {education.map((edu) => (
             <div key={edu.degree} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-700">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">{edu.degree}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{edu.degree}</h3>
               <p className="text-gray-600 dark:text-gray-200 mb-2">{edu.school}</p>
               <p className="text-gray-500 dark:text-gray-400">{edu.period}</p>
               {edu.details && <p className="text-indigo-600 dark:text-indigo-400 mt-2">{edu.details}</p>}
@@ -128,11 +128,11 @@ export default async function AboutPage() {
 
       {/* Experience Section */}
       <section className="mb-20">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8">Work Experience</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Work Experience</h2>
         <div className="space-y-8">
           {experience.map((job) => (
             <div key={job.title} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-700">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">{job.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{job.title}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-1">{job.company}</p>
               <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-4">
                 <span>{job.period}</span>
@@ -151,7 +151,7 @@ export default async function AboutPage() {
 
       {/* Publications Section */}
       <section className="mb-20">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8">Publications</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Publications</h2>
         <div className="space-y-6">
           {publications.map((pub: PostMetadata) => (
             <div key={pub.title} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-700">
@@ -195,7 +195,7 @@ export default async function AboutPage() {
 
       {/* Projects Section */}
       <section className="mb-20">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8">Projects</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Projects</h2>
         <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-700">
           <ul className="space-y-4">
             {featuredProjects.map((project: PostMetadata) => (
@@ -292,7 +292,7 @@ export default async function AboutPage() {
 
       {/* Certificates Section */}
       <section className="mb-20">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8">Certificates</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Certificates</h2>
         <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-700">
           <ul className="space-y-3">
             {certificates.map((cert, index) => (
@@ -304,11 +304,11 @@ export default async function AboutPage() {
 
       {/* Contact & Social Media */}
       <section className="mb-20">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-8">Contact & Connect</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Contact & Connect</h2>
         <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-700">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-4">Get in Touch</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Get in Touch</h3>
               <p className="text-gray-600 dark:text-gray-200 mb-4">
                 Feel free to reach out for collaborations, research opportunities, or just to say hello!
               </p>
@@ -321,7 +321,7 @@ export default async function AboutPage() {
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-4">Social Media</h3>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Social Media</h3>
               <div className="space-y-3">
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -339,14 +339,16 @@ export default async function AboutPage() {
                 
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 .02c-6.627 0-12 5.373-12 12 0 6.628 5.373 12 12 12 6.628 0 12-5.372 12-12 0-6.627-5.372-12-12-12zm6.99 6.98l-2.71 10.114c-.2.738-.76 1.04-1.54.524l-4.27-3.146-2.06 1.968c-.23.23-.42.422-.85.422l.3-4.290 7.8-7.05c.34-.3-.07-.47-.52-.17l-9.63 6.079-4.153-1.302c-.9-.277-.896-.894.19-1.324l16.17-6.232c.75-.276 1.41.435 1.165 1.305z" />
+                    <path d="M21.543 7.104c.014.211.014.423.014.636 0 6.507-4.954 14.01-14.01 14.01v-.004a13.94 13.94 0 0 1-7.547-2.21 9.88 9.88 0 0 0 7.293-2.037 4.93 4.93 0 0 1-4.6-3.42 4.92 4.92 0 0 0 2.223-.084A4.924 4.924 0 0 1 .96 9.167v-.062a4.88 4.88 0 0 0 2.235.616A4.927 4.927 0 0 1 1.67 3.148a13.982 13.982 0 0 0 10.15 5.144 4.929 4.929 0 0 1 8.39-4.49 9.868 9.868 0 0 0 3.128-1.196 4.941 4.941 0 0 1-2.165 2.724A9.828 9.828 0 0 0 24 4.555a10.019 10.019 0 0 1-2.457 2.549z" />
                   </svg>
                   <a href="https://x.com/quyanh205" target="_blank" className="text-blue-600 dark:text-blue-400 hover:underline">Twitter</a>
                 </div>
                 
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm9.567 9.098c-.059-.058-.127-.108-.206-.138-.258-.102-1.035-.203-2.019-.117-.749.068-1.621.238-2.733.568-.445.132-.908.279-1.391.445.056-.341.081-.679.081-1.011 0-3.439-2.782-6.221-6.221-6.221-3.439 0-6.221 2.782-6.221 6.221 0 2.215 1.157 4.152 2.896 5.252-.623.098-1.218.22-1.769.365-.918.24-1.687.538-2.257.842-.686.367-1.185.82-1.446 1.319-.205.399-.239.789-.118 1.146.245.72 1.145 1.266 2.555 1.536.588.112 1.278.166 2.018.166.941 0 2.01-.074 3.086-.26 2.143-.37 4.485-1.135 6.582-2.156.39-.191.774-.397 1.149-.623.426-.256.831-.528 1.196-.827 1.503-1.231 2.467-2.642 2.614-3.854.083-.686-.098-1.311-.492-1.737z" />
+                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+                    <path d="M10.222 14.889h3.556v1.778h-3.556z" />
+                    <path d="M9.333 17.556h5.334v1.778H9.333z" />
                   </svg>
                   <a href="https://scholar.google.com/citations?user=Ah8Gk54AAAAJ&hl=en&oi=ao" target="_blank" className="text-blue-600 dark:text-blue-400 hover:underline">Google Scholar</a>
                 </div>

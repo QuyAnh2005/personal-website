@@ -17,11 +17,11 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-10 bg-white dark:bg-[#0f0f0f] border-b border-gray-200 dark:border-gray-800">
+    <header className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 dark:shadow-gray-950 shadow-sm text-gray-900 dark:text-white">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold text-blue-600 dark:text-blue-400 flex items-center">
-          <span>Alex Chen</span>
-          <span className="text-gray-600 dark:text-gray-200 text-sm ml-2">ML Researcher</span>
+        <Link href="/" className="text-xl font-bold text-blue-600 dark:text-blue-300 flex items-center">
+          <span>Quy-Anh Dang</span>
+          <span className="text-gray-600 dark:text-gray-100 text-sm ml-2">ML Researcher</span>
         </Link>
         
         <nav className="hidden md:flex space-x-6">
@@ -29,7 +29,7 @@ export function Header() {
             <Link 
               key={item.path}
               href={item.path}
-              className={`flex items-center text-sm font-medium ${pathname === item.path ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400'}`}
+              className={`flex items-center text-sm font-medium ${pathname === item.path ? 'text-blue-600 dark:text-blue-300' : 'text-gray-700 dark:text-gray-50 hover:text-blue-600 dark:hover:text-blue-300'}`}
             >
               {item.icon}
               {item.name}
@@ -40,7 +40,7 @@ export function Header() {
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <button 
-            className="md:hidden text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            className="md:hidden text-gray-700 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-300"
             aria-label="Toggle Menu"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -10,11 +10,11 @@ export async function generateStaticParams() {
   return projects;
 }
 
-// Instead of fighting with TypeScript, let's suppress type checking for these functions
-// @ts-ignore - Next.js params handling is complex between dev and prod
-export async function generateMetadata({ params }: any) {
-  // Handle both Promise and non-Promise params
-  const id = params && params.id ? params.id : (await params).id;
+// Properly handle params in Next.js
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  // Always await params even if it's not a Promise to handle both dev and prod environments
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const id = resolvedParams.id;
   const project = await getContentData('projects', id);
   return {
     title: `${project.title} | Alex Chen Projects`,
@@ -22,10 +22,10 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-// @ts-ignore - Next.js params handling is complex between dev and prod
-export default async function ProjectDetail({ params }: any) {
-  // Handle both Promise and non-Promise params
-  const id = params && params.id ? params.id : (await params).id;
+export default async function ProjectDetail({ params }: { params: { id: string } }) {
+  // Always await params even if it's not a Promise to handle both dev and prod environments
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const id = resolvedParams.id;
   const project = await getContentData('projects', id);
   const formattedDate = format(new Date(project.date), 'MMMM d, yyyy');
 
@@ -36,7 +36,7 @@ export default async function ProjectDetail({ params }: any) {
           href="/projects" 
           className="text-blue-600 dark:text-blue-400 font-medium hover:underline mb-6 inline-block"
         >
-          u2190 Back to all projects
+          ← Back to all projects
         </Link>
 
         <article>
@@ -73,7 +73,7 @@ export default async function ProjectDetail({ params }: any) {
                   <FaCode className="mr-2" />
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech: string) => (
-                      <span key={tech} className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm">
+                      <span key={tech} className="bg-blue-100 dark:bg-cyan-400 text-blue-800 dark:text-gray-900 px-2 py-1 rounded text-sm font-semibold">
                         {tech}
                       </span>
                     ))}

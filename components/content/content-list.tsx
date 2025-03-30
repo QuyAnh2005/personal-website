@@ -86,7 +86,7 @@ export function ContentList({ items, type }: ContentListProps) {
           
           {filteredItems.length === 0 ? (
             <div className="text-center py-10">
-              <p className="text-gray-600 dark:text-gray-400">No items found for the current filters.</p>
+              <p className="text-gray-600 dark:text-gray-200">No items found for the current filters.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-6">

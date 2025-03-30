@@ -3,8 +3,8 @@ import { ContentList } from '@/components/content/content-list';
 import { Suspense } from 'react';
 
 export const metadata = {
-  title: 'Blog | Alex Chen',
-  description: 'Articles on machine learning, AI research, and computer vision by Alex Chen.'
+  title: 'Blog | Quy-Anh Dang',
+  description: 'Articles on machine learning, AI research, and computer vision by Quy-Anh Dang.'
 };
 
 export default async function BlogPage() {

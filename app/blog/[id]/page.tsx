@@ -10,11 +10,11 @@ export async function generateStaticParams() {
   return posts;
 }
 
-// Instead of fighting with TypeScript, let's suppress type checking for these functions
-// @ts-ignore - Next.js params handling is complex between dev and prod
-export async function generateMetadata({ params }: any) {
-  // Handle both Promise and non-Promise params
-  const id = params && params.id ? params.id : (await params).id;
+// Properly handle params in Next.js
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  // Always await params even if it's not a Promise to handle both dev and prod environments
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const id = resolvedParams.id;
   const post = await getContentData('blog', id);
   return {
     title: `${post.title} | Alex Chen Blog`,
@@ -22,10 +22,10 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-// @ts-ignore - Next.js params handling is complex between dev and prod
-export default async function BlogPost({ params }: any) {
-  // Handle both Promise and non-Promise params
-  const id = params && params.id ? params.id : (await params).id;
+export default async function BlogPost({ params }: { params: { id: string } }) {
+  // Always await params even if it's not a Promise to handle both dev and prod environments
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const id = resolvedParams.id;
   const post = await getContentData('blog', id);
   const formattedDate = format(new Date(post.date), 'MMMM d, yyyy');
 

@@ -1,0 +1,123 @@
+/* ==================================================
+   THEME CONSISTENCY UTILITIES
+   Ensures visual consistency between light and dark mode
+   ==================================================
+*/
+
+/* Tag consistency - ensures consistent appearance for tags */
+.tag-consistent {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Blue tags */
+.tag-blue-light {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.tag-blue-dark {
+  background-color: #2563eb;
+  color: #f0f9ff;
+}
+
+/* Gray tags */
+.tag-gray-light {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.tag-gray-dark {
+  background-color: #374151;
+  color: #ffffff;
+}
+
+/* Button consistency */
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+html.dark .btn-secondary {
+  background-color: #374151;
+  color: white;
+}
+
+html.dark .btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+/* Text color consistency */
+.text-heading {
+  color: #111827;
+}
+
+html.dark .text-heading {
+  color: white;
+}
+
+.text-body {
+  color: #4b5563;
+}
+
+html.dark .text-body {
+  color: #e5e7eb;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+html.dark .text-muted {
+  color: #9ca3af;
+}
+
+.text-link {
+  color: #2563eb;
+}
+
+.text-link:hover {
+  color: #1d4ed8;
+}
+
+html.dark .text-link {
+  color: #60a5fa;
+}
+
+html.dark .text-link:hover {
+  color: #93c5fd;
+}
+
+/* Card consistency */
+.card-base {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+html.dark .card-base {
+  background-color: #1e293b;
+  border-color: #374151;
+}
+
+/* Transition consistency */
+.transition-theme {
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

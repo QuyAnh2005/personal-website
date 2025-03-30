@@ -9,10 +9,11 @@
   --background: #0f0f0f;
   --foreground: #ffffff;
   --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
-  --nav-bg: #0f0f0f;
-  --footer-bg: #0f0f0f;
-  --card-bg: #1a1a1a;
+  --text-secondary: #e5e5e5;
+  --nav-bg: #111111;
+  --footer-bg: #111111;
+  --card-bg: #121212;
+  background-color: #0f0f0f;
 }
 
 /* Theme variables */
@@ -23,8 +24,67 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html.dark {
+  background-color: #0f0f0f !important;
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--background) !important;
+  color: var(--foreground) !important;
   font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+
+html.dark body,
+html.dark .bg-white,
+html.dark [class*="bg-white"],
+html.dark main,
+html.dark section,
+html.dark div.container,
+html.dark .flex-grow {
+  background-color: #0f0f0f !important;
+}
+
+/* Enhanced dark mode text styles */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: white;
+}
+
+.dark p {
+  color: #e5e5e5;
+}
+
+/* Custom dark mode styles for content cards */
+.dark .border,
+.dark *[class*="border"] {
+  border-color: rgba(31, 41, 55, 0.8) !important;
+}
+
+/* Force dark borders for all elements in dark mode */
+.dark .border-t, .dark .border-b, .dark .border-l, .dark .border-r,
+.dark .border-top, .dark .border-bottom, .dark .border-left, .dark .border-right {
+  border-color: rgba(31, 41, 55, 0.8) !important;
+}
+
+/* Force container and layout borders in dark mode */
+.dark header, .dark footer, .dark main, .dark section, .dark nav, .dark aside {
+  border-color: rgba(31, 41, 55, 0.8) !important;
+}
+
+/* Force shadow colors in dark mode */
+.dark *[class*="shadow"] {
+  --tw-shadow-color: rgba(0, 0, 0, 0.5) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.dark a:not(.bg-blue-600) {
+  color: #93c5fd;
+}
+
+.dark a:hover:not(.bg-blue-600) {
+  color: #bfdbfe;
 }
