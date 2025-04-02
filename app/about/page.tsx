@@ -160,7 +160,7 @@ export default async function AboutPage() {
                 <span>{pub.journal || pub.conference} ({new Date(pub.date).getFullYear()})</span>
               </div>
               <p className="text-gray-600 dark:text-gray-200 mb-2">
-                <span className="font-medium">Authors:</span> QuyAnh, et al.              
+                <span className="font-medium">Authors:</span> Quy-Anh Dang, et al.              
               </p>
               <p className="text-gray-600 dark:text-gray-200 mb-3">{pub.description}</p>
               <div className="flex items-center space-x-4 mt-2">
